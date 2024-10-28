@@ -1,0 +1,85 @@
+.maxWidth {
+    max-width: 1300px;
+    padding: 0 10px;
+    margin: auto;
+}
+
+/* Inicio do topo */
+
+.content {
+    padding: 50px 0;
+}
+
+@media (max-width: 690px) {
+    .content {
+        padding: 20px 0;
+    }
+}
+
+.top {
+    color: var(--site-color);
+    display: flex;
+    /* background: url("../images/banner_top_v5.jpg") no-repeat center;*/
+    /* background: linear-gradient(to right, var(--main-color) 25%, rgba(255, 255, 255, 0)), url("../images/banner_top_v5.jpg") no-repeat center; */
+    height: 100vh;
+    min-height: 500px;
+    /* background-size especifica o tamanho das imagens de fundo */
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.top .maxWidth {
+    width: 100%;
+    display: flex;
+}
+
+.top .topContent .textOne {
+    font-size: 25px;
+}
+
+.top .topContent .textTwo {
+    font-size: 55px;
+    font-weight: 400;
+    margin-left: -3px;
+}
+
+.top .topContent .textThree {
+    font-size: 32px;
+    margin: 5px 0;
+}
+
+.top .topContent a {
+    display: inline-block;
+    background: var(--active-color);
+    color: var(--site-color);
+    font-size: 25px;
+    padding: 12px 36px;
+    margin-top: 20px;
+    font-weight: 300;
+    border-radius: 6px;
+    border: 2px solid var(--active-color);
+    transition: all 0.3s ease;
+}
+
+.top .topContent a:hover {
+    color: var(--active-color);
+    background: none;
+}
+
+/* Ajuste do container para manter as divs lado a lado */
+.sideBySideContainer {
+    display: flex;
+    gap: 20px; /* Espaçamento entre as divs */
+    margin-top: 50px;
+}
+
+@media (max-width: 690px) {
+    .sideBySideContainer {
+        flex-direction: column; /* Empilha as divs no mobile */
+        margin-top: 70px;
+    }
+}
+
+
+/* Fim do topo */

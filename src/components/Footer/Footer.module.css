@@ -1,0 +1,27 @@
+
+/* Inicio do rodape */
+
+.contentFooter {
+    background: var(--second-color);
+    padding: 25px 23px;
+    color: var(--site-color);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+.contentFooter span a {
+    color: var(--active-color);
+}
+
+.contentFooter span a:hover {
+    color: var(--site-color);
+}
+
+@media (max-width: 690px) {
+    .contentFooter {
+        margin-top: 100px;
+    }
+}
+
+/* Fim do rodape */

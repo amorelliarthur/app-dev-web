@@ -1,0 +1,22 @@
+.chartBox {
+    border: 2px solid var(--site-color);
+    border-radius: 10px;
+    padding: 20px;
+    min-height: 400px;
+    max-height: 600px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (max-width: 690px) {
+    .chartBox {
+        max-height: 300px;
+        /* max-width: auto; */
+        padding: 15px;
+    }
+}
