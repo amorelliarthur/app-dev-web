@@ -1,6 +1,6 @@
 import styles from "@/components/HomeTop/HomeTop.module.css";
 import Chart from "../Chart";
-import CurrencyInfo from "@/components/CurrencyInfo"
+import CurrencyInfo from "../CurrencyInfo"
 
 const HomeTop = (): React.ReactElement => {
     return(

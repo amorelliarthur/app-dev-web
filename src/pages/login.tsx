@@ -1,4 +1,4 @@
-import Logincontent from "@/components/LoginContent";
+import LoginContent from "@/components/LoginContent";
 import Footer from "@/components/Footer";
 import Menu from "@/components/Menu";
 import Head from "next/head";
@@ -14,7 +14,7 @@ const Login = ():React.ReactElement => {
       </Head>
       <main>
         <Menu />
-        <Logincontent />
+        <LoginContent />
         <Footer />
       </main>
     </>

@@ -1,5 +1,5 @@
 .chartBox {
-    border: 2px solid var(--site-color);
+    border: 1px solid var(--site-color);
     border-radius: 10px;
     padding: 20px;
     min-height: 400px;

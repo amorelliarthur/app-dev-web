@@ -7,3 +7,9 @@ Instalar biblioteca de icones
 Instalar axios
 ### npm install axios
 
+Instalar NPM
+### npm install
+
+Executar projeto
+### npm run dev
+

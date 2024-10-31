@@ -15,7 +15,7 @@ const Menu = (): React.ReactElement => {
         <nav className={styles.navbar}>
             <div className={styles.maxWidth}>
                 <div className={styles.logo}>
-                    <Link href="/">App</Link>
+                    <Link href="/">Cota Real</Link>
                 </div>
                 <ul className={`${styles.menu} ${ isActive ? styles.active : ""}`} id={styles.menuSite}>
                     <li><Link href="/">Home</Link></li>

@@ -22,6 +22,8 @@ const CurrencyInfo = (): React.ReactElement => {
             const response = await axios.get('https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,GBP-BRL,ARS-BRL,COP-BRL,BTC-BRL,ETH-BRL,LTC-BRL,DOGE-BRL,XRP-BRL');
             const data = response.data;
 
+            console.log(data)
+
             const rates: CurrencyData = {};
             for (const key in data) {
                 const { name, high, low, bid } = data[key];

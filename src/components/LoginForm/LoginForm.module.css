@@ -1,0 +1,56 @@
+.loginContainer {
+    background: var(--second-color);
+    border: 1px solid var(--site-color);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.text {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.fields {
+    height: 45px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.loginField input {
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    outline: none;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.loginField input:focus {
+    border-color: var(--active-color);
+}
+
+.buttonArea {
+    display: flex;
+    align-items: center;
+}
+
+.buttonArea button {
+    background-color: var(--active-color);
+    color: var(--site-color);
+    width: 160px;
+    height: 45px;
+    outline: none;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 2px solid var(--active-color);
+    transition: all 0.3s ease;
+}
+
+.buttonArea button:hover {
+    color: var(--active-color);
+    background: none;
+}

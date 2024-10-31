@@ -33,8 +33,8 @@ const Chart = (): React.ReactElement => {
             const chartData = response.data.map((entry) => ({
                 date: new Date(entry.timestamp * 1000).toLocaleDateString("pt-BR"),
                 value: parseFloat(entry.bid)
-            }));
-            
+            })).reverse();
+
             setData({
                 labels: chartData.map(item => item.date),
                 datasets: [{
