@@ -54,3 +54,7 @@
     color: var(--active-color);
     background: none;
 }
+
+.message{
+    margin-top: 10px;
+}

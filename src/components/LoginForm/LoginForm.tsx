@@ -1,8 +1,35 @@
+import { useState } from "react";
+import axios from "axios";
 import styles from "@/components/LoginForm/LoginForm.module.css";
+import { useRouter } from "next/router";
 
 const LoginForm = (): React.ReactElement => {
-    const handleLogin = (e: React.FormEvent) => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [message, setMessage] = useState<string | null>(null);
+    const router = useRouter();
+
+    const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        const userData = {
+            email,
+            password,
+        };
+
+        try {
+            const response = await axios.post("http://localhost:3000/auth/login", userData);
+            console.log(response);
+            if (response.status === 201) {
+                setMessage("Login realizado com sucesso!");
+                router.push("/"); 
+            } else {
+                setMessage("Erro. Tente novamente.");
+            }
+        } catch (error) {
+            setMessage("Erro! Verifique seus dados e tente novamente.");
+            console.error("Erro:", error);
+        }
     };
 
     return (
@@ -11,16 +38,27 @@ const LoginForm = (): React.ReactElement => {
             <form onSubmit={handleLogin}>
                 <div className={styles.loginField}>
                     <div className={`${styles.fields} ${styles.email}`}>
-                        <input type="email" placeholder="Digite o e-mail" required />
+                        <input 
+                            type="email" 
+                            placeholder="Digite o e-mail"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required />
                     </div>
                     <div className={`${styles.fields} ${styles.password}`}>
-                        <input type="password" placeholder="Senha" required />
+                        <input 
+                            type="password" 
+                            placeholder="Senha" 
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required />
                     </div>
                 </div>
                 <div className={styles.buttonArea}>
                     <button type="submit">Login</button>
                 </div>
             </form>
+            {message && <p className={styles.message}>{message}</p>}
         </div>
     );
 };
