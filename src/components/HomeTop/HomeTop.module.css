@@ -76,6 +76,7 @@
 
 @media (max-width: 690px) {
     .sideBySideContainer {
+        max-width: 100%;
         flex-direction: column; /* Empilha as divs no mobile */
         margin-top: 70px;
     }

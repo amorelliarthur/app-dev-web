@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "@/components/LoginForm/LoginForm.module.css";
 import { useRouter } from "next/router";
@@ -8,6 +8,14 @@ const LoginForm = (): React.ReactElement => {
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState<string | null>(null);
     const router = useRouter();
+
+    // Verifica se o usuário já está logado
+    useEffect(() => {
+        const userName = localStorage.getItem("userName");
+        if (userName) {
+            router.push("/");
+        }
+    }, [router]);
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -21,7 +29,10 @@ const LoginForm = (): React.ReactElement => {
             const response = await axios.post("http://localhost:3000/auth/login", userData);
             console.log(response);
             if (response.status === 201) {
-                setMessage("Login realizado com sucesso!");
+                //setMessage("Login realizado com sucesso!");
+                localStorage.setItem("token", response.data.token);
+                localStorage.setItem("userId", response.data.userId);
+                localStorage.setItem("userName", response.data.name);
                 router.push("/"); 
             } else {
                 setMessage("Erro. Tente novamente.");
