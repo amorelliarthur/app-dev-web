@@ -55,7 +55,7 @@ const CurrencyInfo = (): React.ReactElement => {
         }
 
         try {
-            const response = await axios.get(`http://localhost:3000/coins/user/${userId}`);
+            const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/coins/user/${userId}`);
             const data: FavoritedCoin[] = response.data;
 
             const favorites = new Set(data.map((coin) => coin.code));
@@ -81,7 +81,7 @@ const CurrencyInfo = (): React.ReactElement => {
             // Senão, vamos favoritar
             try {
                 const response = await axios.post(
-                    "http://localhost:3000/coins",
+                    `${process.env.NEXT_PUBLIC_API_URL}/coins`,
                     { code, name },
                     {
                         headers: {
@@ -113,7 +113,7 @@ const CurrencyInfo = (): React.ReactElement => {
 
         try {
             const response = await axios.delete(
-                `http://localhost:3000/coins/${userId}/${code}`,
+                `${process.env.NEXT_PUBLIC_API_URL}/coins/${userId}/${code}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,

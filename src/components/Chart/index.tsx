@@ -29,7 +29,7 @@ const Chart = (): React.ReactElement => {
 
     const fetchData = async () => {
         try {
-            const response = await axios.get<ApiResponseEntry[]>('https://economia.awesomeapi.com.br/json/daily/USD-BRL/30'); // 30 dias
+            const response = await axios.get<ApiResponseEntry[]>(`${process.env.NEXT_PUBLIC_COINS}`);
             const chartData = response.data.map((entry) => ({
                 date: new Date(entry.timestamp * 1000).toLocaleDateString("pt-BR"),
                 value: parseFloat(entry.bid)

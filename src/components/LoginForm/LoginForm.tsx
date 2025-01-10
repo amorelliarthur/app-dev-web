@@ -26,7 +26,8 @@ const LoginForm = (): React.ReactElement => {
         };
 
         try {
-            const response = await axios.post("http://localhost:3000/auth/login", userData);
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/login`, userData);
+
             console.log(response);
             if (response.status === 201) {
                 //setMessage("Login realizado com sucesso!");

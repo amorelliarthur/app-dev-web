@@ -18,7 +18,7 @@ const SignupForm = (): React.ReactElement => {
         };
 
         try {
-            const response = await axios.post("http://localhost:3000/auth/signup", userData);
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/signup`, userData);
             console.log(response);
             if (response.status === 201) {
                 setMessage("Cadastro realizado com sucesso!");
